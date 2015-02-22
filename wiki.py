@@ -13,3 +13,6 @@ def searchwikipedia(query, sentences=1):
         # + ", ".join(e.options)
         summary = wikipedia.summary(e.options[1], sentences=sentences)
     return summary
+
+if __name__ == "__main__":
+    main()
