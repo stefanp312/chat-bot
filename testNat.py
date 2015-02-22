@@ -12,7 +12,7 @@ def process_text(query=""):
     search_term_list = ["search", "where", "when was", "when did", "who is", "who was", "when was", "tell me about", "what is", "tell", "how does", "what makes", "question", "wikipedia", "how to", "find", "wat is", "wat makes", "wut is"]
     twitter_term_list = ["tweet", "twitter", "#", "hashtag", "funny tweet", "updates about"]
     name_term_list = ["your name", "ur name", "youre name", "wat are you", "what are you"]
-    salute_term_list = ["hi", "hello", "how are you", "good morning", "sup", "good evening", "goodnight", "goodnight"]
+    salute_term_list = ["hi", "hello", "how are you", "good morning", "sup", "good evening", "goodnight", "hey", "salut", "bonjour", "what's up"]
     til_term_list = ["fact", "til", "learn", "cool facts"]
 
     if response2['status'] == 'OK':

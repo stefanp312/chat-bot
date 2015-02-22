@@ -5,7 +5,7 @@ from random import randint
 
 def salute(keyword):
 	try:
-		bye_term_list = ["good evening", "goodnight", "goodnight"]
+		bye_term_list = ["good evening", "goodnight", "goodnight", "goodbye", "bye"]
 		if keyword in bye_term_list:
 			return "Goodbye!"
 		else:
