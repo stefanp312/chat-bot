@@ -6,7 +6,7 @@ def choose_script(bodyText=""):
     bodyText = bodyText.lower()
     if reddit.do_joke(bodyText) == "Valid":
         print "just joking"
-        return reddit.get_joke(bodyText)
+        return reddit.get_joke()
     elif twitter.do_handle(bodyText) == "Valid":
         return twitter.get_handle(bodyText)
     elif twitter.do_hashtag(bodyText) == "Valid":
