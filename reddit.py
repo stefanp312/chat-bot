@@ -2,25 +2,23 @@
 # get_til needs nothing
 # get_quote needs nothing
 
-from random import randint
 import praw
 
 def get_joke():
-
-    print "joking"
-    r = praw.Reddit(user_agent='example')
-    r = r.get_random_submission('jokes')
-    title =  r.title
-    text = r.selftext
-    if((len(text) + 3 + len(title) )> 160):
-        text = text.encode('ascii','ignore')
-        title = title.encode('ascii','ignore')
-        update_file("You're a joke")
-        return random_joke()
-    else:
-        update_file(title + ( (" - " + text) if len(text) !=0 else ""))
-        return random_joke()
-
+    try:
+        print "joking"
+        r = praw.Reddit(user_agent='example')
+        r = r.get_random_submission('jokes')
+        title =  r.title
+        text = r.selftext
+        if((len(text) + 3 + len(title) )> 160):
+            text = text.encode('ascii','ignore')
+            title = title.encode('ascii','ignore')
+            return "Your a joke"
+        else:
+            return title + ( (" - " + text) if len(text) !=0 else "")
+    except:
+        return "www.zombo.com"
 def get_til():
     try:
         print "TILLLL"
@@ -66,21 +64,4 @@ def do_quote(input):
     else:
         return "Invalid"
         
-def update_file(joke):
-    if not joke in get_file():
-        file = open('jokes.txt','a')
-        file.write(joke + "+++")
-    else:
-        print joke
-        print "FDSFDSDFDS"
         
-def get_file():
-    file = open('jokes.txt', 'r')
-    lines = file.read()
-    lines2 = lines.split("+++")
-    file.close()
-    return lines2
-    
-def random_joke():
-    jokes = get_file()
-    return jokes[randint(0,len(jokes)-2)]
