@@ -17,8 +17,7 @@ def get_hashtag(tag):
         results = twitter.search(q=tag, result_type='recent', lang="en",count=1)
         print results
     
-        results = results[results.keys()[1]][0]
-        print result
+        results = results[results.keys()[0]][0]
         result = results[results.keys()[2]]
         print result
         result = result.encode('ascii','ignore')
