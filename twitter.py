@@ -16,9 +16,11 @@ def get_hashtag(tag):
         
         results = twitter.search(q=tag, result_type='recent', lang="en",count=1)
         print results
-        print "##############################"
+    
         results = results[results.keys()[1]][0]
+        print result
         result = results[results.keys()[2]]
+        print result
         result = result.encode('ascii','ignore')
         return result
     except:
