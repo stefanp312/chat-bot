@@ -21,6 +21,8 @@ def get_hashtag(tag):
         result = result.encode('ascii','ignore')
         return result
     except:
+        e = sys.exc_info[0]
+        print e
         return "www.zombo.com"
 
 
