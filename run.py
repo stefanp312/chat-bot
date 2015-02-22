@@ -1,6 +1,6 @@
 from flask import Flask, request, redirect, session
 import twilio.twiml
-import wiki
+import navigation
 
 SECRET_KEY = 'donuts'
 app = Flask(__name__)
@@ -18,7 +18,7 @@ def main_reply():
     cmds = session.get('cmds', [""])
     searchs = session.get('searchs', [["", 0]])
 
-    reply = wiki.searchwikipedia(query=recieved_message)
+    reply = navigation.choose_script(bodyText=recieved_message)
 
     # trim the length of the reply to one text
     if len(reply) > 160:

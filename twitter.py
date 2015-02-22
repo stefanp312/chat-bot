@@ -46,17 +46,12 @@ def get_handle(handle):
 
 def do_handle(input):
     if "@" in input:
-        return "valid"
+        return "Valid"
     else:
-        return "invalid"
+        return "Invalid"
 
 def do_hashtag(input):
     if "#" in input:
-        return "valid"
+        return "Valid"
     else:
-        return "invalid"
-
-
-
-print twitter_hashtag("yolo")
-print twitter_handle("yolo")
+        return "Invalid"
