@@ -72,5 +72,3 @@ def process_text(query=""):
         print "I'm sorry you're sad. Here's a joke."
         return reddit.get_joke(True)
     return twitter.get_hashtag(query)
-
-pr
