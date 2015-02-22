@@ -15,9 +15,9 @@ def get_joke(sorry):
             if((len(text) + 3 + len(title) )> 124):
                 text = text.encode('ascii','ignore')
                 title = title.encode('ascii','ignore')
-                return "I'm sorry you're sad. Here's a joke. \n The real joke is you"
+                return "I'm sorry you're sad. Here's a joke: \n The real joke is you"
             else:
-                return "I'm sorry you're sad. Here's a joke." + title + ( (" - " + text) if len(text) !=0 else "")    
+                return "I'm sorry you're sad. Here's a joke: " + title + ( (" - " + text) if len(text) !=0 else "")    
         else:
             if((len(text) + 3 + len(title) )> 160):
                 text = text.encode('ascii','ignore')
