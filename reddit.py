@@ -2,7 +2,7 @@
 # get_til needs nothing
 # get_quote needs nothing
 
-import praw
+import wikipedia
 
 def get_joke():
     try:

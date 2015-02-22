@@ -1,7 +1,7 @@
 # get_hashtag needs the text
 # get_handle needs the text
 
-import Twython
+from twython import Twython
 
 def get_hashtag(tag):
     try:
