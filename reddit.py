@@ -6,7 +6,7 @@ import praw
 
 def get_joke():
     try:
-        pribt "joking"
+        print "joking"
         r = praw.Reddit(user_agent='example')
         r = r.get_random_submission('jokes')
         title =  r.title
