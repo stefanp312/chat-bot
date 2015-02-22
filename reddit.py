@@ -51,14 +51,14 @@ def do_joke(input):
     else:
         return "Invalid"
 
-def do_til():
+def do_til(input):
     if (("fact" in input) or ("til" in input)):
         return "Valid"
     else:
         return "Invalid"
 
 
-def do_quote():
+def do_quote(input):
     if "quote" in input:
         return "Valid"
     else:
