@@ -9,8 +9,9 @@ def helloWorld(input):
 	if key_counter>2:
 		#print "My name is Jonas!\nhttp://youtu.be/yk0_i8u_bgs"
 		return "My name is Jonas!\nhttp://youtu.be/yk0_i8u_bgs"
+		
 	else:
-		#print "Hello world"
-		return "Hello world"
+		return "Invalid"
 
 
+	
