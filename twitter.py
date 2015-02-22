@@ -8,14 +8,15 @@ def get_hashtag(tag):
         APP_KEY = 'MDszGMPdCSC6ujOVB86YXwwMX'
         ACCESS_TOKEN = "AAAAAAAAAAAAAAAAAAAAAMNpeQAAAAAAzW0NtAlnkRbxa%2FvGJc2iKxoz8oM%3DVjIzeLDaWXBPybTv8mKRlXgDoQWbQW56ZbM4xcxk5yPRlBXsQs"
 
-
+        print "logme"
         twitter = Twython(APP_KEY, access_token=ACCESS_TOKEN)
-
+        print "logme"
         if(tag[0] != '#'):
             tag = '#' + tag
-
+            print "logme2"
+        print "logme"
         results = twitter.search(q=tag, result_type='recent', lang="en",count=1)
-
+        print "logme"
         results = results[results.keys()[1]][0]
         result = results[results.keys()[2]]
         result = result.encode('ascii','ignore')
