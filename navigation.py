@@ -5,6 +5,7 @@ import twitter
 def choose_script(bodyText=""):
     bodyText = bodyText.lower()
     if reddit.do_joke(bodyText) == "Valid":
+        print "just joking"
         return reddit.get_joke(bodyText)
     elif twitter.do_handle(bodyText) == "Valid":
         return twitter.get_handle(bodyText)

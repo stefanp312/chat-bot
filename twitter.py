@@ -23,6 +23,7 @@ def get_hashtag(tag):
     except:
         e = sys.exc_info[0]
         print e
+        print "zombocom"
         return "www.zombo.com"
 
 
