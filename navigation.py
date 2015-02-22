@@ -6,7 +6,7 @@ import testNat
 def choose_script(bodyText=""):
     bodyText = bodyText.lower()
     if reddit.do_joke(bodyText) == "Valid":
-        return reddit.get_joke()
+        joke = reddit.get_joke(False)
     if reddit.do_til(bodyText) == "Valid":
         return reddit.get_til()
     if reddit.do_quote(bodyText) == "Valid":
@@ -18,3 +18,4 @@ def choose_script(bodyText=""):
     if wiki.willsearch(bodyText) == "Valid":
         return wiki.searchwikipedia(bodyText)
     return testNat.process_text(bodyText)
+

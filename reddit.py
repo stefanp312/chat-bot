@@ -4,19 +4,27 @@
 
 import praw
 
-def get_joke():
+def get_joke(sorry):
     try:
         print "joking"
         r = praw.Reddit(user_agent='example')
         r = r.get_random_submission('jokes')
         title =  r.title
         text = r.selftext
-        if((len(text) + 3 + len(title) )> 160):
-            text = text.encode('ascii','ignore')
-            title = title.encode('ascii','ignore')
-            return "The real joke is you"
+        if sorry:
+            if((len(text) + 3 + len(title) )> 124):
+                text = text.encode('ascii','ignore')
+                title = title.encode('ascii','ignore')
+                return "I'm sorry you're sad. Here's a joke. \n The real joke is you"
+            else:
+                return "I'm sorry you're sad. Here's a joke." + title + ( (" - " + text) if len(text) !=0 else "")    
         else:
-            return title + ( (" - " + text) if len(text) !=0 else "")
+            if((len(text) + 3 + len(title) )> 160):
+                text = text.encode('ascii','ignore')
+                title = title.encode('ascii','ignore')
+                return "The real joke is you"
+            else:
+                return title + ( (" - " + text) if len(text) !=0 else "")
     except:
         return "www.zombo.com"
 def get_til():
