@@ -15,4 +15,4 @@ def searchwikipedia(query, sentences=1):
     return summary
 
 if __name__ == "__main__":
-    main()
+    searchwikipedia("")
