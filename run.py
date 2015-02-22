@@ -17,7 +17,8 @@ def main_reply():
     # create cmds variable from cookies
     cmds = session.get('cmds', [""])
     searchs = session.get('searchs', [["", 0]])
-    reply = wiki.searchwikipedia(recieved_message)
+    reply = "wiki.searchwikipedia(recieved_message)"
+
     # trim the length of the reply to one text
     if len(reply) > 160:
         reply = reply[0:159]
