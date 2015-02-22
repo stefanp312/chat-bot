@@ -6,6 +6,7 @@ import praw
 
 def get_joke():
     try:
+        pribt "joking"
         r = praw.Reddit(user_agent='example')
         r = r.get_random_submission('jokes')
         title =  r.title
@@ -20,6 +21,7 @@ def get_joke():
         return "www.zombo.com"
 def get_til():
     try:
+        print "TILLLL"
         r = praw.Reddit(user_agent='example')
         r = r.get_random_submission('TIL')
         title =  r.title
@@ -32,6 +34,7 @@ def get_til():
         return "www.zombo.com"
 def get_quote():
     try:
+        print "DICKENS"
         r = praw.Reddit(user_agent='example')
         r = r.get_random_submission('quotes')
         title =  r.title
