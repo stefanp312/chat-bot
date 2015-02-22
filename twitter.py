@@ -26,7 +26,7 @@ def get_hashtag(tag):
         text = result[0]['text']
         return text.encode("utf-8")
     except:
-        return "www.zombo.com"
+        return get_hashtag("mchacks")
 
 def get_handle(handle):
         try:
@@ -50,7 +50,7 @@ def get_handle(handle):
             text = result[0]['text']
             return text.encode("utf-8")
         except:
-            return "www.zombo.com"
+            return get_handle("McGillHacks")
 
 
 def do_handle(input):
