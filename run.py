@@ -1,6 +1,6 @@
 from flask import Flask, request, redirect, session
 import twilio.twiml
-import wikipedia
+import wiki
 
 SECRET_KEY = 'donuts'
 app = Flask(__name__)
@@ -18,8 +18,8 @@ def main_reply():
     cmds = session.get('cmds', [""])
     searchs = session.get('searchs', [["", 0]])
 
-    reply = searchwikipedia(query=recieved_message)
-    
+    reply = wiki.searchwikipedia(query=recieved_message)
+
     # trim the length of the reply to one text
     if len(reply) > 160:
         reply = reply[0:159]
@@ -35,15 +35,6 @@ def main_reply():
     session['searchs'] = searchs
 
     return str(resp)
-
-def searchwikipedia(query, sentences=1):
-    summary = ""
-    try:
-        summary = wikipedia.summary(query, sentences=sentences)
-    except wikipedia.exceptions.DisambiguationError as e:
-        # + ", ".join(e.options)
-        summary = wikipedia.summary(e.options[1], sentences=sentences)
-    return summary
 
 if __name__ == "__main__":
     app.run(debug=True)
