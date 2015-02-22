@@ -56,7 +56,4 @@ def do_hashtag(input):
     else:
         return "invalid"
 
-
-
-print twitter_hashtag("yolo")
-print twitter_handle("yolo")
+get_handle('ff')
