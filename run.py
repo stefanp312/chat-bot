@@ -22,8 +22,8 @@ def main_reply():
     # trim the length of the reply to one text
     if len(reply) > 160:
         reply = reply[0:159]
-    if reply == "":
-        reply = "Error"
+    # if reply == "":
+    #  reply = "Error"
 
     # get the response scheme from twilio and add reply as message body
     resp = twilio.twiml.Response()
