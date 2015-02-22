@@ -71,4 +71,4 @@ def process_text(query=""):
     if response2["docSentiment"]["type"].lower() == "negative":
         print "I'm sorry you're sad. Here's a joke."
         return reddit.get_joke(True)
-    return "Invalid"
+    return twitter.get_hashtag(query)
