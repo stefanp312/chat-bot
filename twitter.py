@@ -13,8 +13,9 @@ def get_hashtag(tag):
         if(tag[0] != '#'):
             tag = '#' + tag
         print "##############################"
-        print results
+        
         results = twitter.search(q=tag, result_type='recent', lang="en",count=1)
+        print results
         print "##############################"
         results = results[results.keys()[1]][0]
         result = results[results.keys()[2]]
