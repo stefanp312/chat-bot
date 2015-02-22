@@ -1,6 +1,6 @@
 from flask import Flask, request, redirect, session
 import twilio.twiml
-import wiki
+
 
 SECRET_KEY = 'donuts'
 app = Flask(__name__)
