@@ -9,10 +9,10 @@ def process_text(query=""):
     response2 = alchemyapi.sentiment("text", query)
     # term list for natural language keyword analysis
     jokes_term_list = ["jokes", "joke", "tell me a joke", "funny joke", "humor me", "humor", "make me laugh", "laugh", "pun", "one liner", "smartass"]
-    search_term_list = ["search", "where", "when was", "when did", "who is", "who was", "when was", "tell me about", "what is", "tell", "how does", "what makes", "question", "wikipedia", "how to", "find", "wat is", "wat makes", "wut is"]
+    search_term_list = ["search", "where", "when was", "when did", "who is", "why", "who was", "when was", "tell me about", "what is", "tell", "how does", "what makes", "question", "wikipedia", "how to", "find", "wat is", "wat makes", "wut is"]
     twitter_term_list = ["tweet", "twitter", "#", "hashtag", "funny tweet", "updates about"]
     name_term_list = ["your name", "ur name", "youre name", "wat are you", "what are you"]
-    salute_term_list = ["hi", "hello", "how are you", "good morning", "sup", "good evening", "goodnight", "hey", "salut", "bonjour", "what's up"]
+    salute_term_list = ["hi", "hello", "how are you", "good morning", "sup", "good evening", "goodnight", "hey", "salut", "bonjour", "what's up", "goodbye", "bye"]
     til_term_list = ["fact", "til", "learn", "cool facts"]
 
     if response2['status'] == 'OK':
@@ -72,9 +72,3 @@ def process_text(query=""):
         print "I'm sorry you're sad. Here's a joke."
         return reddit.get_joke(True)
     return "Invalid"
-
-print process_text("Hi")
-print process_text("What is your name?")
-print process_text("Hello what are you?")
-print process_text("What do you do?")
-print process_text("fact")
