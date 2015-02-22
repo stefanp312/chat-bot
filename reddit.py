@@ -49,7 +49,7 @@ def do_joke(input):
         return "Invalid"
 
 def do_til():
-    if "fact" in input:
+    if (("fact" in input) or ("til" in input)):
         return "Valid"
     else:
         return "Invalid"
