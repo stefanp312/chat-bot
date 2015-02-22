@@ -3,6 +3,7 @@ import reddit
 import twitter
 
 def choose_script(bodyText=""):
+    bodyText = bodyText.lower()
     if reddit.do_joke(bodyText) == "Valid":
         return reddit.get_joke(bodyText)
     elif twitter.do_handle(bodyText) == "Valid":

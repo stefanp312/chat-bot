@@ -45,19 +45,19 @@ def get_quote():
         return "www.zombo.com"
 def do_joke(input):
     if "joke" in input:
-        return "valid"
+        return "Valid"
     else:
-        return "invalid"
+        return "Invalid"
 
 def do_til():
     if "fact" in input:
-        return "valid"
+        return "Valid"
     else:
-        return "invalid"
+        return "Invalid"
 
 
 def do_quote():
     if "quote" in input:
-        return "valid"
+        return "Valid"
     else:
-        return "invalid"
+        return "Invalid"
