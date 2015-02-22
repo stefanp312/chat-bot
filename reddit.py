@@ -14,7 +14,7 @@ def get_joke():
         if((len(text) + 3 + len(title) )> 160):
             text = text.encode('ascii','ignore')
             title = title.encode('ascii','ignore')
-            return "Your a joke"
+            return "The real joke is you"
         else:
             return title + ( (" - " + text) if len(text) !=0 else "")
     except:
