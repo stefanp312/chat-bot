@@ -28,7 +28,7 @@ def main_reply():
 
     # get the response scheme from twilio and add reply as message body
     resp = twilio.twiml.Response()
-    resp.message(reply)
+    resp.message(reply.encode("utf-8"))
 
     print reply
 
