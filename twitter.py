@@ -1,7 +1,7 @@
 # get_hashtag needs the text
 # get_handle needs the text
 
-from twython import Twython
+import Twython
 
 def get_hashtag(tag):
     try:
@@ -46,14 +46,13 @@ def get_handle(handle):
 
 def do_handle(input):
     if "@" in input:
-        return "valid"
+        return "Valid"
     else:
-        return "invalid"
+        return "Invalid"
 
 def do_hashtag(input):
     if "#" in input:
-        return "valid"
+        return "Valid"
     else:
-        return "invalid"
+        return "Invalid"
 
-get_handle('ff')
