@@ -11,7 +11,7 @@ def process_text(query=""):
     jokes_term_list = ["jokes", "joke", "tell me a joke", "funny joke", "humor me", "humor", "make me laugh", "laugh", "pun", "one liner", "smartass"]
     search_term_list = ["search", "where", "when was", "when did", "who is", "why", "who was", "when was", "tell me about", "what is", "tell", "how does", "what makes", "question", "wikipedia", "how to", "find", "wat is", "wat makes", "wut is"]
     twitter_term_list = ["tweet", "twitter", "#", "hashtag", "funny tweet", "updates about"]
-    name_term_list = ["your name", "ur name", "youre name", "wat are you", "what are you"]
+    name_term_list = ["your name", "ur name", "youre name", "wat are you", "what are you", "who are you"]
     salute_term_list = ["hi", "hello", "how are you", "good morning", "sup", "good evening", "goodnight", "hey", "salut", "bonjour", "what's up", "goodbye", "bye"]
     til_term_list = ["fact", "til", "learn", "cool facts"]
 
