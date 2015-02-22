@@ -6,10 +6,17 @@ import praw
 
 def get_joke():
     try:
+        print "log1"
         r = praw.Reddit(user_agent='example')
+        
+        print "log2"
         r = r.get_random_submission('jokes')
+        
+        print "log3"
         title =  r.title
         text = r.selftext
+        
+        print "log4"
         if((len(text) + 3 + len(title) )> 160):
             text = text.encode('ascii','ignore')
             title = title.encode('ascii','ignore')
