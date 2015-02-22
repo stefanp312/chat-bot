@@ -1,6 +1,6 @@
 import wiki
-import twitter
 import reddit
+import twitter
 
 def choose_script(bodyText=""):
     if reddit.doJoke(bodyText) == "Valid":
