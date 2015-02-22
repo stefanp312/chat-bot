@@ -61,7 +61,3 @@ def do_quote():
         return "valid"
     else:
         return "invalid"
-
-print get_quote()
-print get_til()
-print get_joke()
