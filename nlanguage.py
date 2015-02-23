@@ -2,7 +2,7 @@ from alchemyapi import AlchemyAPI
 import reddit
 import twitter
 import wiki
-import introduction
+import hello
 
 def process_text(query=""):
     alchemyapi = AlchemyAPI()
@@ -44,11 +44,11 @@ def process_text(query=""):
     for term in name_term_list:
         if term in query.lower():
             print "name stuff"
-            return introduction.give_name()
+            return hello.give_name()
     for term in salute_term_list:
         if term in query.lower():
             print "hi stuff"
-            return introduction.salute(term)
+            return hello.salute(term)
     for term in til_term_list:
         if term in query.lower():
             print "til reddit"
