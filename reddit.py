@@ -4,7 +4,7 @@
 
 import praw
 
-def get_joke(sorry):
+def get_joke(sorry=False):
     try:
         print "joking"
         r = praw.Reddit(user_agent='example')

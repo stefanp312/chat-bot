@@ -56,7 +56,7 @@ def process_text(query=""):
     for term in jokes_term_list:
         if term in query.lower():
             print "jokes"
-            return reddit.get_joke()
+            return reddit.get_joke(False)
     for term in search_term_list:
         if term in query.lower():
             for keyword in response['keywords']:
