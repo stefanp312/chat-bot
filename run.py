@@ -29,7 +29,7 @@ def main_reply():
     # get the response scheme from twilio and add reply as message body
     resp = twilio.twiml.Response()
     resp.message(reply.encode("utf-8"))
-    #log server reply
+    # log server reply
     log(reply)
     # store previous queries of the user in a cookie
     searchs = session.get('searchs', [])
@@ -37,7 +37,6 @@ def main_reply():
     replies = session.get('searchs', [])
     replies.append(reply)
     # Save the new cmds/searchs list in the session
-    session['cmds'] = cmds
     session['searchs'] = searchs
 
     return str(resp)
