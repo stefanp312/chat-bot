@@ -3,23 +3,23 @@ import twilio.twiml
 import navigation
 
 SECRET_KEY = 'donuts'
+logging = True
 app = Flask(__name__)
 app.config.from_object(__name__)
 
-# Try adding your own number to this list!
+def log(mesagge=""):
+    if logging:
+        print mesagge
 
-@app.route("/", methods = ['GET', 'POST'])
+@app.route("/", methods=['GET', 'POST'])
 def main_reply():
+    # Log values from request
     from_number = request.values.get('From', None)
-    print from_number
+    log(from_number)
     recieved_message = request.values.get('Body')
-
-    # create cmds variable from cookies
-    cmds = session.get('cmds', [""])
-    searchs = session.get('searchs', [["", 0]])
-
+    log(recieved_message)
+    # pick reply to message
     reply = navigation.choose_script(bodyText=recieved_message)
-
     # trim the length of the reply to one text
     if len(reply) > 160:
         reply = reply[0:159]
@@ -29,9 +29,13 @@ def main_reply():
     # get the response scheme from twilio and add reply as message body
     resp = twilio.twiml.Response()
     resp.message(reply.encode("utf-8"))
-
-    print reply
-
+    #log server reply
+    log(reply)
+    # store previous queries of the user in a cookie
+    searchs = session.get('searchs', [])
+    searchs.append(recieved_message)
+    replies = session.get('searchs', [])
+    replies.append(reply)
     # Save the new cmds/searchs list in the session
     session['cmds'] = cmds
     session['searchs'] = searchs

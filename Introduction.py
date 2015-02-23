@@ -42,5 +42,3 @@ def what_do():
 		return "I am chatbot that can search twitter, wikipedia, reddit, with natural language processing."
 	except:
 		return "Invalid"
-
-print salute("Hi")

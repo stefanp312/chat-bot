@@ -1,7 +1,7 @@
 import wiki
 import reddit
 import twitter
-import testNat
+import nlanguage
 
 def choose_script(bodyText=""):
     bodyText = bodyText.lower()
@@ -17,5 +17,4 @@ def choose_script(bodyText=""):
         return twitter.get_hashtag(bodyText)
     if wiki.willsearch(bodyText) == "Valid":
         return wiki.searchwikipedia(bodyText)
-    return testNat.process_text(bodyText)
-
+    return nlanguage.process_text(bodyText)
