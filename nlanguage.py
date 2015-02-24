@@ -4,6 +4,9 @@ import twitter
 import wiki
 import hello
 
+logging = True
+
+
 def process_text(query=""):
     alchemyapi = AlchemyAPI()
     response2 = alchemyapi.sentiment("text", query)
@@ -15,32 +18,29 @@ def process_text(query=""):
     salute_term_list = ["hi", "hello", "how are you", "good morning", "sup", "good evening", "goodnight", "hey", "salut", "bonjour", "what's up", "goodbye", "bye"]
     til_term_list = ["fact", "til", "learn", "cool facts"]
 
-    if response2['status'] == 'OK':
+    if logging:
+        if response2['status'] == 'OK':
+            print "Sentiment: ", response2["docSentiment"]["type"]
+            print('## Response Object ##')
+            response = alchemyapi.combined("text", query)
+            print response
+            print('')
+            print('## Keywords ##')
+            for keyword in response['keywords']:
+                print(keyword['text'], ' : ', keyword['relevance'])
+            print('')
 
-        print "Sentiment: ", response2["docSentiment"]["type"]
-        print('## Response Object ##')
-        response = alchemyapi.combined("text", query)
-        print response
-        print('')
+            print('## Concepts ##')
+            for concept in response['concepts']:
+                print(concept['text'], ' : ', concept['relevance'])
+            print('')
 
-        print('## Keywords ##')
-        for keyword in response['keywords']:
-            print(keyword['text'], ' : ', keyword['relevance'])
-        print('')
-
-        print('## Concepts ##')
-        for concept in response['concepts']:
-            print(concept['text'], ' : ', concept['relevance'])
-        print('')
-
-        print('## Entities ##')
-        for entity in response['entities']:
-            print(entity['type'], ' : ', entity['text'], ', ', entity['relevance'])
-        print(' ')
-
-    else:
-        print('Error in combined call: ', response['statusInfo'])
-
+            print('## Entities ##')
+            for entity in response['entities']:
+                print(entity['type'], ' : ', entity['text'], ', ', entity['relevance'])
+            print(' ')
+        else:
+            print('Error in combined call: ', response['statusInfo'])
     for term in name_term_list:
         if term in query.lower():
             print "name stuff"
@@ -55,7 +55,7 @@ def process_text(query=""):
             return reddit.get_til()
     for term in jokes_term_list:
         if term in query.lower():
-            print "jokes"
+            print "nat lang get joke"
             return reddit.get_joke(False)
     for term in search_term_list:
         if term in query.lower():

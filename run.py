@@ -7,9 +7,11 @@ logging = True
 app = Flask(__name__)
 app.config.from_object(__name__)
 
+
 def log(mesagge=""):
     if logging:
         print mesagge
+
 
 @app.route("/", methods=['GET', 'POST'])
 def main_reply():

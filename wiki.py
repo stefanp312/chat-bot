@@ -1,9 +1,11 @@
 import wikipedia
 
-def willsearch(bodyText=""):
-    if "search" in bodyText:
-		return "Valid"
+
+def willsearch(body_text=""):
+    if "search" in body_text:
+        return "Valid"
     return "Invalid"
+
 
 def searchwikipedia(query, sentences=1):
     summary = ""
